@@ -6,6 +6,14 @@ import br.com.caelum.vraptor.Result;
 
 @Resource
 public class HomeController {
+	
+	static {
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+	}
 
 	private Result result;
 
