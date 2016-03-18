@@ -1,11 +1,23 @@
 package br.com.caelum.pagamentos.controllers.forms;
 
+import javax.validation.Valid;
+
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.Length;
+import org.hibernate.validator.constraints.NotBlank;
+
 public class PagamentoForm {
 
+	@NotBlank
 	private String bandeira;
+	@NotBlank
 	private String numero;
+	@NotBlank
+	@Length(max=3,min=3,message="Tem que ser 3 números")
 	private String cvv;
+	@Email
 	private String emailExistente;
+	@Valid
 	private NovoClienteForm novoClienteForm = new NovoClienteForm();
 
 	public String getBandeira() {

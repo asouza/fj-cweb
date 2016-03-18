@@ -1,8 +1,11 @@
 package br.com.caelum.pagamentos.controllers.forms;
 
-public class NovoClienteForm {
+import org.hibernate.validator.constraints.Email;
 
+public class NovoClienteForm {
+	
 	private String nome;
+	@Email
 	private String email;
 
 	public String getNome() {
